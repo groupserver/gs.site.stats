@@ -25,4 +25,19 @@
     weight="10" 
     permission="zope2.ManageProperties" />
 
+  <!-- The site-stats content provider -->
+  <interface 
+    interface=".interfaces.IGSSiteStatsContentProvider"
+    type="zope.contentprovider.interfaces.ITALNamespaceData"/>
+  <class class=".contentprovider.SiteStatsContentProvider">
+    <implements interface=".interfaces.IGSSiteStatsContentProvider"/>
+  </class>
+  <adapter
+    for="zope.interface.Interface
+      zope.publisher.interfaces.browser.IDefaultBrowserLayer
+      zope.interface.Interface"
+    factory=".contentprovider.SiteStatsContentProvider"
+    provides="zope.contentprovider.interfaces.IContentProvider"
+    name="groupserver.SiteStats"/>
+
 </configure>
