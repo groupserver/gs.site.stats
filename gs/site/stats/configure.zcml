@@ -3,4 +3,18 @@
            xmlns:browser="http://namespaces.zope.org/browser"
            i18n_domain="groupserver">
 
-</configure
+  <browser:page
+    for="Products.GSContent.interfaces.IGSSiteFolder"
+    name="stats.html"
+    class=".view.GSSiteStatsView"
+    template="browser/templates/view.pt" 
+    permission="zope2.View" />
+
+  <browser:page
+    for="Products.GSContent.interfaces.IGSSiteFolder"
+    name="stats.csv"
+    class=".csv.GSSiteStatsCSVView"
+    permission="zope2.View" />
+
+
+</configure>

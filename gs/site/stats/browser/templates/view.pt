@@ -1,0 +1,122 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:tal="http://xml.zope.org/namespaces/tal"
+  xmlns:metal="http://xml.zope.org/namespaces/metal"
+  metal:use-macro="context/@@groupserver_site_home_layout/page">
+  <head>
+    <title metal:fill-slot="title">
+      <span tal:replace="python:view.get_title()">
+        I am a fish
+      </span>
+    </title>      
+    <meta name="title" content="Site Statistics"/>
+    <meta name="author" content="Michael JasonSmith" />
+    <meta name="date" content="2007-06-01"/>
+  </head>
+  <body>
+    <tal:block metal:fill-slot="body">
+      <h1>Posts Per Month in all Groups on
+        <span tal:content="view/siteInfo/get_name"/></h1>
+
+      <p tal:define="siteId view/siteInfo/id"
+        tal:content="structure provider:groupserver.SiteStats">
+        Stats summary for the site.
+      </p>
+
+      <p>The participation statistics are available in
+        <a href="stats.csv" 
+          class="excellink"><abbr title="Comma Separated Value">CSV</abbr> 
+          format.</a></p>
+      
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th colspan="12">Month</th>
+          </tr>
+          <tr>
+            <th>Year</th>
+            <tal:block tal:repeat="m python:range(1, 13)">
+              <th tal:content="m"/>
+            </tal:block>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th>Year</th>
+            <tal:block tal:repeat="m python:range(1, 13)">
+              <th tal:content="m"/>
+            </tal:block>
+          </tr>
+          <tr>
+            <th></th>
+            <th colspan="12">Month</th>
+          </tr>
+        </tfoot>
+        <tbody>
+          <tal:block tal:repeat="groupStats view/get_stats">
+            <tal:block tal:define="n repeat/groupStats/number; odd python:n%2;
+                                   groupMembersInfo python: view.get_group_members_info(groupStats['group'].groupObj);
+                                   groupId groupStats/group/id;
+                                   siteId view/siteInfo/id;
+                                   membersAtDate python: view.get_members_at_date(groupStats['group'].groupObj);
+                                   membersOnDigest python: membersAtDate.members_on_digest(siteId, groupId);
+                                   membersOnWebOnly python: membersAtDate.members_on_webonly(siteId, groupId);
+                                   membersOnEmail python: groupMembersInfo.fullMemberCount - (membersOnDigest + membersOnWebOnly)">
+              <tr tal:attributes="id string:heading-${groupStats/group/get_id};
+                class python:odd and 'groupHeading odd' or 'groupHeading even'">
+                <th colspan="13">
+                  <a href="#"
+                    tal:attributes="href string:${groupStats/group/get_url}/stats.html"
+                    tal:content="groupStats/group/get_name">Group Name</a>
+                </th>
+              </tr>
+              <tr tal:attributes="id string:${groupStats/group/get_id}-current-membership;
+                class python:odd and 'groupHeading odd' or 'groupHeading even'">
+                <th colspan="13">
+                  <b>Current Members:</b> <tal:block content="groupMembersInfo/fullMemberCount">A Number</tal:block>
+                </th>
+              </tr>
+              <tr tal:attributes="id string:${groupStats/group/get_id}-current-membership;
+                class python:odd and 'groupHeading odd' or 'groupHeading even'">
+                <th colspan="13">
+                  <b>Email Members:</b> <tal:block content="membersOnEmail">A Number</tal:block>
+                </th>
+              </tr>
+              <tr tal:attributes="id string:${groupStats/group/get_id}-current-membership;
+                class python:odd and 'groupHeading odd' or 'groupHeading even'">
+                <th colspan="13">
+                  <b>Digest Members:</b> <tal:block content="membersOnDigest">A Number</tal:block>
+                </th>
+              </tr>
+              <tr tal:attributes="id string:${groupStats/group/get_id}-current-membership;
+                class python:odd and 'groupHeading odd' or 'groupHeading even'">
+                <th colspan="13">
+                  <b>Web Only Members:</b> <tal:block content="membersOnWebOnly">A Number</tal:block>
+                </th>
+              </tr>
+              <tal:block tal:define="years python:groupStats['stats'].keys(); 
+                foo python:years.reverse()" 
+                tal:repeat="year years">
+                <tr tal:attributes="id string:${groupStats/group/get_id}-${year}-posts;
+                  class python:odd and 'year odd' or 'year even'">
+                  <th tal:content="year">Year</th>
+                  <tal:block tal:repeat="m python:range(1, 13)">
+                    <td tal:define="mVal python:groupStats['stats'][year].get(m, {})"
+                      tal:content="mVal/post_count | nothing"/>
+                  </tal:block>
+                </tr>
+              </tal:block>
+              <tr tal:condition="not:groupStats/stats"
+                tal:attributes="class python:odd and 'odd' or 'even'">
+                <td colspan="13">There are no posts in 
+                  <span tal:content="groupStats/group/get_name"
+                    class="group">the group</span></td>
+              </tr>
+            </tal:block>
+          </tal:block>
+        </tbody>
+      </table>
+    </tal:block>
+  </body>
+</html>
+
