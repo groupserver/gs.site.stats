@@ -33,9 +33,6 @@ class GSSiteStatsView(SitePage):
         retval = MessageQuery(self.context)
         return retval
 
-    def get_title(self):
-        return 'Posting Statistics: %s' % self.siteInfo.get_name()
-
     def get_stats(self):
         siteId = self.siteInfo.get_id()
         groupIds = self.groupsInfo.get_visible_group_ids()

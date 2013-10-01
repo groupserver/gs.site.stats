@@ -1,21 +1,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:tal="http://xml.zope.org/namespaces/tal"
-  xmlns:metal="http://xml.zope.org/namespaces/metal"
-  metal:use-macro="context/@@groupserver_site_home_layout/page">
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:use-macro="context/@@groupserver_layout/page">
   <head>
-    <title metal:fill-slot="title">
-      <span tal:replace="python:view.get_title()">
-        I am a fish
-      </span>
+    <title metal:fill-slot="title">Participation statistics:
+      <span tal:replace="view/siteInfo/name">This site</span>
     </title>      
-    <meta name="title" content="Site Statistics"/>
-    <meta name="author" content="Michael JasonSmith" />
-    <meta name="date" content="2007-06-01"/>
   </head>
   <body>
-    <tal:block metal:fill-slot="body">
-      <h1>Posts Per Month in all Groups on
-        <span tal:content="view/siteInfo/get_name"/></h1>
+    <div id="gs-site-stats" metal:fill-slot="body">
+      <h1>Participation statistics
+      <a class="btn small" href="stats.csv">csv</a></h1>
 
       <p tal:define="siteId view/siteInfo/id"
         tal:content="structure provider:groupserver.SiteStats">
@@ -116,7 +111,7 @@
           </tal:block>
         </tbody>
       </table>
-    </tal:block>
+    </div><!--gs-site-stats-->
   </body>
 </html>
 
