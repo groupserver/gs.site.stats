@@ -1,2 +1,3 @@
 # -*- coding: utf-8 -*-
-# This space intentionally left blank.
+from __future__ import absolute_import
+from .posting import SitePostingStats  # lint:ok
