@@ -3,6 +3,8 @@
            xmlns:browser="http://namespaces.zope.org/browser"
            i18n_domain="groupserver">
 
+  <include package="zope.viewlet" file="meta.zcml" />
+
   <browser:page
     for="Products.GSContent.interfaces.IGSSiteFolder"
     name="stats.html"
@@ -16,5 +18,11 @@
     class=".csv.GSSiteStatsCSVView"
     permission="zope2.View" />
 
+  <browser:viewlet 
+    name="gs-site-stats-link"
+    manager="gs.site.change.base.interfaces.ISiteAdminLinks"
+    template="browser/templates/link.pt"
+    weight="10" 
+    permission="zope2.ManageProperties" />
 
 </configure>
