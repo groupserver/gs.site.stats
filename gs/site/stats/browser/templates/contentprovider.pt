@@ -1,4 +1,4 @@
-<span id="site-stats"
+<span id="gs-site-stats-contentprovider"
   tal:define="view options/view; c view/sitePostingStats/numMembers;
     plural python:c&gt;1;">
   <span id="site-stats-membership">
@@ -19,5 +19,5 @@
       tal:content="view/sitePostingStats/maxPerDay">a few</span> 
     posts in one day.
   </span><!--site-stats-posting-->
-</span><!--site-stats-->
+</span><!--gs-site-stats-contentprovider-->
 
