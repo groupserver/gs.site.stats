@@ -13,8 +13,8 @@
 #
 ##############################################################################
 from zope.cachedescriptors.property import Lazy
+from gs.group.member.base import get_group_userids
 from gs.group.stats import MessageQuery
-from Products.GSGroupMember.groupmembership import get_group_userids
 
 
 class SitePostingStats(object):
@@ -77,6 +77,6 @@ class SitePostingStats(object):
 
     @Lazy
     def numMembers(self):
-        ids = get_group_userids(self.context, self.siteInfo.id)
+        ids = get_group_userids(self.context, self.siteInfo)
         retval = len(ids)
         return retval

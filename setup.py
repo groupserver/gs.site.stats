@@ -49,6 +49,7 @@ setup(name='gs.site.stats',
         'zope.component',
         'gs.content.base',
         'gs.content.layout',
+        'gs.group.member.base',
     ],
     entry_points="""
     # -*- Entry points: -*-
