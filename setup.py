@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-# Copyright © 2013 OnlineGroups.net and Contributors.
+# Copyright © 2013, 2014 OnlineGroups.net and Contributors.
 # All Rights Reserved.
 #
 # This software is subject to the provisions of the Zope Public License,
@@ -42,14 +42,25 @@ setup(name='gs.site.stats',
     packages=find_packages(exclude=['ez_setup']),
     namespace_packages=['gs', 'gs.site', ],
     include_package_data=True,
-    zip_safe=True,
+    zip_safe=False,
     install_requires=[
         'setuptools',
+        'zope.browserpage',
         'zope.cachedescriptors',
         'zope.component',
+        'zope.contentprovider',
+        'zope.pagetemplate',
+        'zope.schema',
+        'zope.tal',
+        'zope.tales',
+        'Zope2',
         'gs.content.base',
         'gs.content.layout',
+        'gs.core',
         'gs.group.member.base',
+        'gs.group.stats',
+        'gs.viewlet',
+        'Products.GSGroupMembersInfo',
     ],
     entry_points="""
     # -*- Entry points: -*-
