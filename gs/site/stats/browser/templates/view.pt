@@ -5,7 +5,7 @@
   <head>
     <title metal:fill-slot="title">Participation statistics:
     <span tal:replace="view/siteInfo/name">This site</span>
-    </title>      
+    </title>
   </head>
   <body>
     <ul metal:fill-slot="breadcrumb">
@@ -29,13 +29,13 @@
         Stats summary for the site.
       </p>
 
-      <div tal:repeat="groupStats view/get_stats" 
+      <div tal:repeat="groupStats view/get_stats"
            class="gs-site-stats-group"
            tal:attributes="id groupStats/group/id">
-        <h2><a href="#" 
+        <h2><a href="#"
                tal:attributes="href string:${groupStats/group/relativeURL}/stats.html"
                tal:content="groupStats/group/name">This group</a></h2>
-        
+
         <ul class="muted dotted-inline-list"
             tal:define="g groupStats/group/groupObj;
                         siteId view/siteInfo/id;
@@ -64,7 +64,7 @@
         </ul>
         <table>
           <caption>
-            Posts per month in 
+            Posts per month in
             <span tal:content="groupStats/group/name">This group</span>
           </caption>
           <thead>
@@ -94,8 +94,8 @@
           <tbody tal:define="n repeat/groupStats/number; odd python:n%2;
                              groupId groupStats/group/id;
                              siteId view/siteInfo/id;">
-            <tal:block tal:define="years python:groupStats['stats'].keys(); 
-                                   foo python:years.reverse()" 
+            <tal:block tal:define="years python:groupStats['stats'].keys();
+                                   foo python:years.reverse()"
                        tal:repeat="year years">
               <tr tal:attributes="id string:${groupStats/group/id}-${year}-posts;
                                   class python:odd and 'year odd' or 'year even'">
@@ -108,7 +108,7 @@
             </tal:block>
             <tr tal:condition="not:groupStats/stats"
                 tal:attributes="class python:odd and 'odd' or 'even'">
-              <td colspan="13">There are no posts in 
+              <td colspan="13">There are no posts in
               <span tal:content="groupStats/group/name"
                     class="group">the group</span></td>
             </tr>
@@ -118,4 +118,3 @@
     </div>
   </body>
 </html>
-

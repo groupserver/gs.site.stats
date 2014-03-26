@@ -11,13 +11,12 @@
     tal:condition="view/sitePostingStats/postsExist">
     Normally they post around
     <span class="val" id="site-stats-posting-mean"
-      tal:content="view/sitePostingStats/intMeanPerDay">some</span> 
+      tal:content="view/sitePostingStats/intMeanPerDay">some</span>
     posts each day;
     the most they have posted is
     <span class="val"
       id="site-stats-posting-max"
-      tal:content="view/sitePostingStats/maxPerDay">a few</span> 
+      tal:content="view/sitePostingStats/maxPerDay">a few</span>
     posts in one day.
   </span><!--site-stats-posting-->
 </span><!--gs-site-stats-contentprovider-->
-

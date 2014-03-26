@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Copyright © 2013, 2014 OnlineGroups.net and Contributors. -->
+<!-- All Rights Reserved. -->
+
+<!-- This software is subject to the provisions of the Zope Public -->
+<!-- License, Version 2.1 (ZPL).  A copy of the ZPL should accompany this -->
+<!-- distribution. -->
+
+<!-- THIS SOFTWARE IS PROVIDED "AS IS" AND ANY AND ALL EXPRESS OR IMPLIED -->
+<!-- WARRANTIES ARE DISCLAIMED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED -->
+<!-- WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND -->
+<!-- FITNESS FOR A PARTICULAR PURPOSE. -->
 <configure xmlns="http://namespaces.zope.org/zope"
            xmlns:browser="http://namespaces.zope.org/browser"
            i18n_domain="groupserver">
@@ -6,38 +17,37 @@
   <include package="zope.viewlet" file="meta.zcml" />
 
   <browser:page
-    for="Products.GSContent.interfaces.IGSSiteFolder"
     name="stats.html"
+    for="Products.GSContent.interfaces.IGSSiteFolder"
     class=".view.GSSiteStatsView"
-    template="browser/templates/view.pt" 
+    template="browser/templates/view.pt"
     permission="zope2.View" />
 
   <browser:page
-    for="Products.GSContent.interfaces.IGSSiteFolder"
     name="stats.csv"
+    for="Products.GSContent.interfaces.IGSSiteFolder"
     class=".csv.GSSiteStatsCSVView"
     permission="zope2.View" />
 
-  <browser:viewlet 
+  <browser:viewlet
     name="gs-site-stats-link"
     manager="gs.site.change.base.interfaces.ISiteAdminLinks"
     template="browser/templates/link.pt"
-    weight="10" 
+    weight="10"
     permission="zope2.ManageProperties" />
 
   <!-- The site-stats content provider -->
-  <interface 
+  <interface
     interface=".interfaces.IGSSiteStatsContentProvider"
     type="zope.contentprovider.interfaces.ITALNamespaceData"/>
   <class class=".contentprovider.SiteStatsContentProvider">
     <implements interface=".interfaces.IGSSiteStatsContentProvider"/>
   </class>
   <adapter
+    name="groupserver.SiteStats"
     for="zope.interface.Interface
-      zope.publisher.interfaces.browser.IDefaultBrowserLayer
-      zope.interface.Interface"
+         zope.publisher.interfaces.browser.IDefaultBrowserLayer
+         zope.interface.Interface"
     factory=".contentprovider.SiteStatsContentProvider"
-    provides="zope.contentprovider.interfaces.IContentProvider"
-    name="groupserver.SiteStats"/>
-
+    provides="zope.contentprovider.interfaces.IContentProvider" />
 </configure>
