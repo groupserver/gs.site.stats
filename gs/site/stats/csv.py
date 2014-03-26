@@ -12,17 +12,18 @@
 # FOR A PARTICULAR PURPOSE.
 #
 ##############################################################################
-from __future__ import absolute_import
-import datetime as dt
+from __future__ import absolute_import, unicode_literals
+from datetime import date
+from gs.core import to_ascii
 from .view import GSSiteStatsView
 
 
 class GSSiteStatsCSVView(GSSiteStatsView):
     def __call__(self):
-        retval = 'ID, Group, Year, Count, Jan, Feb, Mar, Apr, May, Jun, Jul,'\
+        r = 'ID, Group, Year, Count, Jan, Feb, Mar, Apr, May, Jun, Jul,'\
             ' Aug, Sep, Oct, Nov, Dec\n'
         stats = self.get_stats()
-        today = dt.date.today()
+        today = date.today()
         for groupStats in stats:
             group = groupStats['group']
             groupName = group.get_name()
@@ -30,14 +31,14 @@ class GSSiteStatsCSVView(GSSiteStatsView):
             siteId = self.siteInfo.id
 
             # Add a row for total group membership
-            retval += '"%s", "%s", %s, Total Members,' % \
+            r += '"%s", "%s", %s, Total Members,' % \
                 (groupId, groupName, today.year)
             members_values = [' '] * 12
             groupMembersInfo = self.get_group_members_info(group.groupObj)
             fullMembers = groupMembersInfo.fullMemberCount
             members_values[today.month - 1] = '%s' % fullMembers
-            retval += ','.join(members_values)
-            retval += '\n'
+            r += ','.join(members_values)
+            r += '\n'
 
             # Add a row for each type of membership
             mad = self.get_members_at_date(group.groupObj)
@@ -45,36 +46,46 @@ class GSSiteStatsCSVView(GSSiteStatsView):
             membersOnWebOnly = mad.members_on_webonly(siteId, groupId)
             membersOnEmail = fullMembers - (membersOnDigest + membersOnWebOnly)
 
-            retval += '"%s", "%s", %s, Email Members,' % \
+            r += '"%s", "%s", %s, Email Members,' % \
                 (groupId, groupName, today.year)
             members_values[today.month - 1] = '%s' % membersOnEmail
-            retval += ','.join(members_values)
-            retval += '\n'
+            r += ','.join(members_values)
+            r += '\n'
 
-            retval += '"%s", "%s", %s, Digest Members,' % \
+            r += '"%s", "%s", %s, Digest Members,' % \
                 (groupId, groupName, today.year)
             members_values[today.month - 1] = '%s' % membersOnDigest
-            retval += ','.join(members_values)
-            retval += '\n'
+            r += ','.join(members_values)
+            r += '\n'
 
-            retval += '"%s", "%s", %s, Web Only Members,' % \
+            r += '"%s", "%s", %s, Web Only Members,' % \
                 (groupId, groupName, today.year)
             members_values[today.month - 1] = '%s' % membersOnWebOnly
-            retval += ','.join(members_values)
-            retval += '\n'
+            r += ','.join(members_values)
+            r += '\n'
 
-            years = groupStats['stats'].keys()
+            years = list(groupStats['stats'].keys())
             years.reverse()
             for year in years:
-                retval += '"%s", "%s", %s, Posts' % (groupId, groupName, year)
+                r += '"%s", "%s", %s, Posts' % (groupId, groupName, year)
                 for m in range(1, 13):
                     monthStats = groupStats['stats'][year].get(m, {})
-                    retval += ', %s' % monthStats.get('post_count', 0)
-                retval += '\n"%s", "%s", %s, Authors' % \
+                    r += ', %s' % monthStats.get('post_count', 0)
+                r += '\n"%s", "%s", %s, Authors' % \
                     (groupId, groupName, year)
                 for m in range(1, 13):
                     monthStats = groupStats['stats'][year].get(m, {})
-                    retval += ', %s' % monthStats.get('user_count', 0)
-                retval += '\n'
+                    r += ', %s' % monthStats.get('user_count', 0)
+                r += '\n'
+
+        response = self.request.response
+        ctype = 'text/csv; charset=UTF-8'
+        response.setHeader(to_ascii("Content-Type"), to_ascii(ctype))
+        filename = '{0}-statistics.csv'.format(self.siteInfo.id)
+        disposition = 'inline; filename="{0}"'.format(filename)
+        response.setHeader(to_ascii('Content-Disposition'),
+                            to_ascii(disposition))
+        assert r
+        retval = r.encode('utf-8', 'ignore')
         assert retval
         return retval

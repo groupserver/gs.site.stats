@@ -12,17 +12,19 @@
 # FOR A PARTICULAR PURPOSE.
 #
 ##############################################################################
+from __future__ import unicode_literals
 from zope.schema import ASCIILine
 from zope.contentprovider.interfaces import IContentProvider
+from gs.core import to_ascii
 
 
 class IGSSiteStatsContentProvider(IContentProvider):
-    siteId = ASCIILine(title=u'Site Identifier',
-        description=u'The identifier for the site',
+    siteId = ASCIILine(title='Site Identifier',
+        description='The identifier for the site',
         required=True)
 
-    pageTemplateFileName = ASCIILine(title=u"Page Template File Name",
-        description=u'The name of the ZPT file that is used to '
-        u'render the status message.',
+    pageTemplateFileName = ASCIILine(title="Page Template File Name",
+        description='The name of the ZPT file that is used to '
+        'render the status message.',
         required=False,
-        default="browser/templates/contentprovider.pt")
+        default=to_ascii("browser/templates/contentprovider.pt"))

@@ -12,6 +12,7 @@
 # FOR A PARTICULAR PURPOSE.
 #
 ##############################################################################
+from __future__ import unicode_literals
 from zope.cachedescriptors.property import Lazy
 from zope.component import createObject
 from gs.content.base.page import SitePage
