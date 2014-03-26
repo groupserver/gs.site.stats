@@ -60,7 +60,7 @@ setup(name='gs.site.stats',
         'gs.group.member.base',
         'gs.group.stats',
         'gs.viewlet',
-        'Products.GSGroupMembersInfo',
+        'Products.GSGroupMember',
     ],
     entry_points="""
     # -*- Entry points: -*-
