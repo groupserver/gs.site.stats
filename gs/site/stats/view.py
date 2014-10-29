@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-##############################################################################
+############################################################################
 #
-# Copyright © 2013 OnlineGroups.net and Contributors.
+# Copyright © 2013, 2014 OnlineGroups.net and Contributors.
 # All Rights Reserved.
 #
 # This software is subject to the provisions of the Zope Public License,
@@ -11,7 +11,7 @@
 # WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
 # FOR A PARTICULAR PURPOSE.
 #
-##############################################################################
+############################################################################
 from __future__ import unicode_literals
 from zope.cachedescriptors.property import Lazy
 from zope.component import createObject
@@ -40,7 +40,8 @@ class GSSiteStatsView(SitePage):
         groupIds.sort()
         retval = {}
         for groupId in groupIds:
-            gObj = createObject('groupserver.GroupInfo', self.context, groupId)
+            gObj = createObject('groupserver.GroupInfo', self.context,
+                                groupId)
             res = self.messageQuery.posting_stats(siteId, [groupId])
             retval = {'group': gObj, 'stats': res}
             yield retval

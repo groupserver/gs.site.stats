@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-##############################################################################
+############################################################################
 #
 # Copyright © 2013 OnlineGroups.net and Contributors.
 # All Rights Reserved.
@@ -11,7 +11,7 @@
 # WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
 # FOR A PARTICULAR PURPOSE.
 #
-##############################################################################
+############################################################################
 from __future__ import absolute_import, unicode_literals
 from datetime import date
 from gs.core import to_ascii
@@ -44,7 +44,8 @@ class GSSiteStatsCSVView(GSSiteStatsView):
             mad = self.get_members_at_date(group.groupObj)
             membersOnDigest = mad.members_on_digest(siteId, groupId)
             membersOnWebOnly = mad.members_on_webonly(siteId, groupId)
-            membersOnEmail = fullMembers - (membersOnDigest + membersOnWebOnly)
+            membersOnEmail = (fullMembers
+                              - (membersOnDigest + membersOnWebOnly))
 
             r += '"%s", "%s", %s, Email Members,' % \
                 (groupId, groupName, today.year)
@@ -84,7 +85,7 @@ class GSSiteStatsCSVView(GSSiteStatsView):
         filename = '{0}-statistics.csv'.format(self.siteInfo.id)
         disposition = 'inline; filename="{0}"'.format(filename)
         response.setHeader(to_ascii('Content-Disposition'),
-                            to_ascii(disposition))
+                           to_ascii(disposition))
         assert r
         retval = r.encode('utf-8', 'ignore')
         assert retval

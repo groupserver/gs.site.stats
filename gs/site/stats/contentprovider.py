@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-##############################################################################
+############################################################################
 #
-# Copyright © 2013 OnlineGroups.net and Contributors.
+# Copyright © 2013, 2014 OnlineGroups.net and Contributors.
 # All Rights Reserved.
 #
 # This software is subject to the provisions of the Zope Public License,
@@ -11,7 +11,7 @@
 # WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
 # FOR A PARTICULAR PURPOSE.
 #
-##############################################################################
+############################################################################
 from __future__ import absolute_import
 from zope.pagetemplate.pagetemplatefile import PageTemplateFile
 from zope.contentprovider.interfaces import UpdateNotCalled
@@ -29,7 +29,7 @@ class SiteStatsContentProvider(SiteContentProvider):
         self.__updated = True
 
         self.sitePostingStats = SitePostingStats(self.siteInfo,
-                                    self.context)
+                                                 self.context)
         self.sitePostingStats.update()
 
     def render(self):

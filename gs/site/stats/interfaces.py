@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-##############################################################################
+############################################################################
 #
-# Copyright © 2013 OnlineGroups.net and Contributors.
+# Copyright © 2013, 2014 OnlineGroups.net and Contributors.
 # All Rights Reserved.
 #
 # This software is subject to the provisions of the Zope Public License,
@@ -11,7 +11,7 @@
 # WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
 # FOR A PARTICULAR PURPOSE.
 #
-##############################################################################
+############################################################################
 from __future__ import unicode_literals
 from zope.schema import ASCIILine
 from zope.contentprovider.interfaces import IContentProvider
@@ -19,11 +19,13 @@ from gs.core import to_ascii
 
 
 class IGSSiteStatsContentProvider(IContentProvider):
-    siteId = ASCIILine(title='Site Identifier',
+    siteId = ASCIILine(
+        title='Site Identifier',
         description='The identifier for the site',
         required=True)
 
-    pageTemplateFileName = ASCIILine(title="Page Template File Name",
+    pageTemplateFileName = ASCIILine(
+        title="Page Template File Name",
         description='The name of the ZPT file that is used to '
         'render the status message.',
         required=False,
