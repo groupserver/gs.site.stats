@@ -1,0 +1,87 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-10-29 19:06+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: ./browser/templates/view.pt:53
+msgid "Current Members:"
+msgstr "Les membres courante:"
+
+#: ./browser/templates/view.pt:63
+msgid "Digest Members:"
+msgstr "Les membres que lisent les sujets résumé:"
+
+#: ./browser/templates/view.pt:58
+msgid "Email Members:"
+msgstr "Les membres que lisent les email:"
+
+#: ./browser/templates/view.pt:81
+msgid "Month"
+msgstr "Mois"
+
+#: ./interfaces.py:29
+msgid "Page Template File Name"
+msgstr ""
+
+#: ./browser/templates/view.pt:22
+msgid "Participation statistics"
+msgstr "Statistiques de participation"
+
+#: ./browser/templates/view.pt:10
+msgid "Participation statistics: ${siteName}"
+msgstr "Statistiques de participation: ${siteName}"
+
+#: ./interfaces.py:24
+msgid "Site Identifier"
+msgstr "Le identifiant du site"
+
+#: ./interfaces.py:25
+msgid "The identifier for the site"
+msgstr "Le identifiant du site"
+
+#: ./interfaces.py:30
+msgid "The name of the ZPT file that is used to render the status message."
+msgstr ""
+
+#: ./browser/templates/link.pt:4
+msgid "View the <strong>statistics</strong>."
+msgstr "Regardez le <strong>statistiques</strong>."
+
+#: ./browser/templates/view.pt:68
+msgid "Web Only Members:"
+msgstr "Les membres que lisent le web seulement:"
+
+#: ./browser/templates/view.pt:84
+msgid "Year"
+msgstr "Année"
+
+#: ./browser/templates/view.pt:28
+msgid "csv"
+msgstr ""
+
+#. Default: "There are no posts in ${groupName}"
+#: ./browser/templates/view.pt:122
+msgid "no-posts"
+msgstr ""
+
+#. Default: "${siteName} has ${val} ${members} ${singular}"
+#: ./browser/templates/contentprovider.pt:14
+msgid ""
+msgstr "${siteName} a ${val} gens"
+
+#. Default: "Normally they post around ${meanPosts} posts each day; the most they have posted is ${maxPosts} posts in one day."
+#: ./browser/templates/contentprovider.pt:24
+msgid ""
+msgstr "Ils écrivent a propos ${meanPosts} messages chaque jour; le maximum ont été ${maxPosts} en un jour."
+

@@ -1,28 +1,32 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="gs.site.stats"
       metal:use-macro="context/@@groupserver_layout/page">
   <head>
-    <title metal:fill-slot="title">Participation statistics:
-    <span tal:replace="view/siteInfo/name">This site</span>
+    <title metal:fill-slot="title"
+           i18n:translate="">Participation statistics:
+    <tal:block i18n:name="siteName"
+               tal:content="view/siteInfo/name">This site</tal:block>
     </title>
   </head>
   <body>
     <ul metal:fill-slot="breadcrumb">
       <li>
-        <a class="icon-alone" title="Site Homepage" href="/"
-           tal:attributes="title string:${view/siteInfo/name} homepage">
-          <span data-icon="⌂" aria-hidden="true"/>
+        <a href="/" class="icon-alone">
+          <span aria-hidden="true" data-icon="&#x2302;"></span>
           <span class="screen-reader-text">Site home page</span>
         </a>
-      </li>
-      <li>
+     </li>
+     <li i18n:translate="">
         Participation statistics
       </li>
     </ul>
     <div id="gs-site-stats" metal:fill-slot="body">
-      <h1>Participation statistics
-      <a class="btn small" href="stats.csv">csv</a></h1>
+      <h1><tal:block i18n:translate="">Participation statistics</tal:block>
+      <a class="btn small" href="stats.csv"
+         i18n:translate="">csv</a></h1>
 
       <p tal:define="siteId view/siteInfo/id"
          tal:content="structure provider:groupserver.SiteStats">
@@ -46,34 +50,38 @@
                         membersOnWebOnly python: membersAtDate.members_on_webonly(siteId, groupId);
                         membersOnEmail python: groupMembersInfo.fullMemberCount - (membersOnDigest + membersOnWebOnly);">
           <li tal:attributes="id string:${groupStats/group/id}-current-membership;">
-            Current Members:
-            <tal:block content="groupMembersInfo/fullMemberCount">A Number</tal:block>
+            <tal:block i18n:translate="">Current Members:</tal:block>
+            <span tal:content="groupMembersInfo/fullMemberCount"
+                  class="val">A Number</span>
           </li>
           <li tal:attributes="id string:${groupStats/group/id}-current-membership;">
-            Email Members:
-            <tal:block content="membersOnEmail">A Number</tal:block>
+            <tal:block i18n:translate="">Email Members:</tal:block>
+            <span tal:content="membersOnEmail"
+                  class="val">A Number</span>
           </li>
           <li tal:attributes="id string:${groupStats/group/id}-current-membership;">
-            Digest Members:
-            <tal:block content="membersOnDigest">A Number</tal:block>
+            <tal:block i18n:translate="">Digest Members:</tal:block>
+            <span tal:content="membersOnDigest"
+                  class="val">A Number</span>
           </li>
           <li tal:attributes="id string:${groupStats/group/id}-current-membership;">
-            Web Only Members:
-            <tal:block content="membersOnWebOnly">A Number</tal:block>
+            <tal:block i18n:translate="">Web Only Members:</tal:block>
+            <span tal:content="membersOnWebOnly"
+                  class="val">A Number</span>
           </li>
         </ul>
         <table>
-          <caption>
-            Posts per month in
-            <span tal:content="groupStats/group/name">This group</span>
+          <caption tal:content="string:Posts per month in ${groupStats/group/name}"
+                   i18n:translate="">
+            Posts per month
           </caption>
           <thead>
             <tr>
               <th></th>
-              <th colspan="12">Month</th>
+              <th colspan="12" i18n:translate="">Month</th>
             </tr>
             <tr>
-              <th>Year</th>
+              <th i18n:translate="">Year</th>
               <tal:block tal:repeat="m python:range(1, 13)">
                 <th tal:content="m"/>
               </tal:block>
@@ -81,7 +89,7 @@
           </thead>
           <tfoot>
             <tr>
-              <th>Year</th>
+              <th i18n:translate="">Year</th>
               <tal:block tal:repeat="m python:range(1, 13)">
                 <th tal:content="m"/>
               </tal:block>
@@ -108,9 +116,12 @@
             </tal:block>
             <tr tal:condition="not:groupStats/stats"
                 tal:attributes="class python:odd and 'odd' or 'even'">
-              <td colspan="13">There are no posts in
-              <span tal:content="groupStats/group/name"
-                    class="group">the group</span></td>
+              <td colspan="13"
+                  i18n:translate="no-posts">
+                There are no posts in
+                <span tal:content="groupStats/group/name"
+                      i18n:name="groupName"
+                      class="group">the group</span></td>
             </tr>
           </tbody>
         </table>

@@ -12,21 +12,22 @@
 # FOR A PARTICULAR PURPOSE.
 #
 ############################################################################
-from __future__ import unicode_literals
+from __future__ import absolute_import, unicode_literals
 from zope.schema import ASCIILine
 from zope.contentprovider.interfaces import IContentProvider
 from gs.core import to_ascii
+from . import GSMessageFactory as _
 
 
 class IGSSiteStatsContentProvider(IContentProvider):
     siteId = ASCIILine(
-        title='Site Identifier',
-        description='The identifier for the site',
+        title=_('Site Identifier'),
+        description=_('The identifier for the site'),
         required=True)
 
     pageTemplateFileName = ASCIILine(
-        title="Page Template File Name",
-        description='The name of the ZPT file that is used to '
-        'render the status message.',
+        title=_("Page Template File Name"),
+        description=_('The name of the ZPT file that is used to '
+                      'render the status message.'),
         required=False,
         default=to_ascii("browser/templates/contentprovider.pt"))

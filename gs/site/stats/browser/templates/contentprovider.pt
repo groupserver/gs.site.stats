@@ -1,12 +1,15 @@
-<span id="gs-site-stats-contentprovider"
-  tal:define="view options/view; c view/sitePostingStats/numMembers;
-    plural python:c&gt;1;">
+<span xmlns:tal="http://xml.zope.org/namespaces/tal"
+      id="gs-site-stats-contentprovider"
+      tal:define="view options/view; c view/sitePostingStats/numMembers;
+                  plural python:c&gt;1;">
   <span id="site-stats-membership">
     <span class="site"
       tal:content="view/siteInfo/name">This site</span>
     has
     <span class="val" tal:content="c">a few</span>
-    member<span tal:condition="plural">s</span>.</span><!--site-stats-membership-->
+    <tal:block tal:condition="plural">members.</tal:block>
+    <tal:block tal:condition="not:plural">member</tal:block>
+  </span><!--site-stats-membership-->
   <span id="site-stats-posting"
     tal:condition="view/sitePostingStats/postsExist">
     Normally they post around
