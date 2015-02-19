@@ -16,80 +16,80 @@ msgstr ""
 
 #: ./browser/templates/view.pt:29
 msgid "csv"
-msgstr ""
+msgstr "csv"
 
 #. Default: "Current Members:"
 #: ./browser/templates/view.pt:54
 msgid "current-members"
-msgstr ""
+msgstr "Current members:"
 
 #. Default: "Digest Members:"
 #: ./browser/templates/view.pt:66
 msgid "digest-members"
-msgstr ""
+msgstr "Digest members:"
 
 #. Default: "Email Members:"
 #: ./browser/templates/view.pt:60
 msgid "email-members"
-msgstr ""
+msgstr "Email members:"
 
 #. Default: "Month"
 #: ./browser/templates/view.pt:87
 msgid "month"
-msgstr ""
+msgstr "Month"
 
 #. Default: "There are no posts in ${groupName}"
 #: ./browser/templates/view.pt:128
 msgid "no-posts"
-msgstr ""
+msgstr "There are no posts in ${groupName}."
 
 #. Default: "Participation statistics"
 #: ./browser/templates/view.pt:22
 msgid "page-name"
-msgstr ""
+msgstr "Participation statistics"
 
 #. Default: "Participation statistics: ${siteName}"
 #: ./browser/templates/view.pt:10
 msgid "page-title"
-msgstr ""
+msgstr "Participation statistics: ${siteName}"
 
 #. Default: "Posts per month in ${groupName}"
 #: ./browser/templates/view.pt:81
 msgid "posts-per-month"
-msgstr ""
+msgstr "Posts per month in ${groupName}"
 
 #. Default: "View the <strong>statistics</strong>."
 #: ./browser/templates/link.pt:4
 msgid "site-stats-link"
-msgstr ""
+msgstr "View the <strong>statistics</strong>."
 
 #. Default: "${siteName} has <strong>no members.</strong>"
 #: ./browser/templates/contentprovider.pt:8
 msgid "site-stats-summary-members-0"
-msgstr ""
+msgstr "${siteName} has <strong>no members.</strong>"
 
 #. Default: "${siteName} has one member."
 #: ./browser/templates/contentprovider.pt:14
 msgid "site-stats-summary-members-1"
-msgstr ""
+msgstr "${siteName} has one member."
 
 #. Default: "${siteName} has ${memberCount} members."
 #: ./browser/templates/contentprovider.pt:23
 msgid "site-stats-summary-members-many"
-msgstr ""
+msgstr "${siteName} has ${memberCount} members."
 
 #. Default: "Normally they post around ${mean-posts-per-day} posts each day; the most they have posted is ${maximum-posts-per-day} posts in one day."
 #: ./browser/templates/contentprovider.pt:34
 msgid "site-stats-summary-posting"
-msgstr ""
+msgstr "Normally they post around ${mean-posts-per-day} posts each day; the most they have posted is ${maximum-posts-per-day} posts in one day."
 
 #. Default: "Web Only Members:"
 #: ./browser/templates/view.pt:72
 msgid "web-only-members"
-msgstr ""
+msgstr "Web-only members:"
 
 #. Default: "Year"
 #: ./browser/templates/view.pt:90
 msgid "year"
-msgstr ""
+msgstr "Year"
 
