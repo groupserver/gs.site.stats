@@ -2,7 +2,7 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       i18n:domain="gs.site.stats"
       id="gs-site-stats-contentprovider"
-      tal:define="view options/view; c view/sitePostingStats/numMembers;">
+      tal:define="c view/sitePostingStats/numMembers;">
   <span id="site-stats-membership-0" tal:condition="python:c==0"
         i18n:translate="site-stats-summary-members-0">
     <span class="site" i18n:name="siteName"
@@ -15,7 +15,7 @@
           tal:content="view/siteInfo/name">This site</span>
     has one member.
   </span><!--site-stats-membership-1-->
-  <span id="site-stats-membership" tal:condition="python:c&gt;1;"
+  <span id="site-stats-membership" tal:condition="python:c&gt;1"
         i18n:translate="site-stats-summary-members-many">
     <span class="site" i18n:name="siteName"
           tal:content="view/siteInfo/name">This site</span>
