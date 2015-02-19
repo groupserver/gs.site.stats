@@ -3,7 +3,6 @@ host = https://www.transifex.com
 
 [gs-site-stats.gs-site-stats-pot]
 file_filter = gs/site/stats/locales/<lang>/LC_MESSAGES/gs.site.stats.po
-source_file = gs/site/stats/locales/en/LC_MESSAGES/gs.site.stats.po
 source_lang = en
 type = PO
 

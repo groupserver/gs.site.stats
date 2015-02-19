@@ -7,7 +7,7 @@ Usage statistics for a GroupServer site
 
 :Author: `Michael JasonSmith`_
 :Contact: Michael JasonSmith <mpj17@onlinegroups.net>
-:Date: 2013-10-01
+:Date: 2015-02-19
 :Organization: `GroupServer.org`_
 :Copyright: This document is licensed under a
   `Creative Commons Attribution-Share Alike 4.0 International License`_
@@ -23,6 +23,7 @@ Resources
 =========
 
 - Code repository: https://github.com/groupserver/gs.site.stats/
+- Translations: https://www.transifex.com/projects/p/gs-site-stats/
 - Questions and comments to http://groupserver.org/groups/development/
 - Report bugs at https://redmine.iopen.net/projects/groupserver/
 
