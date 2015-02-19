@@ -1,6 +1,14 @@
 Changelog
 =========
 
+2.1.1 (2015-02-19)
+------------------
+
+* Added Transifex_ support for the i18n
+* Refactored the site-statistics summary to better handle plurals
+
+.. _Transifex: https://www.transifex.com/projects/p/gs-site-stats/
+
 2.1.0 (2014-10-29)
 ------------------
 
@@ -20,3 +28,5 @@ Changelog
 
 * Initial version (moving the code here from
   ``Products.GSParticipationStats``)
+
+..  LocalWords:  Changelog Refactored Transifex
