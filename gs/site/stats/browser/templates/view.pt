@@ -6,7 +6,7 @@
       metal:use-macro="context/@@groupserver_layout/page">
   <head>
     <title metal:fill-slot="title"
-           i18n:translate="">Participation statistics:
+           i18n:translate="page-title">Participation statistics:
     <tal:block i18n:name="siteName"
                tal:content="view/siteInfo/name">This site</tal:block>
     </title>
@@ -19,12 +19,13 @@
           <span class="screen-reader-text">Site home page</span>
         </a>
      </li>
-     <li i18n:translate="">
+     <li i18n:translate="page-name">
         Participation statistics
       </li>
     </ul>
     <div id="gs-site-stats" metal:fill-slot="body">
-      <h1><tal:block i18n:translate="">Participation statistics</tal:block>
+      <h1><tal:block
+            i18n:translate="page-name">Participation statistics</tal:block>
       <a class="btn small" href="stats.csv"
          i18n:translate="">csv</a></h1>
 
@@ -50,38 +51,43 @@
                         membersOnWebOnly python: membersAtDate.members_on_webonly(siteId, groupId);
                         membersOnEmail python: groupMembersInfo.fullMemberCount - (membersOnDigest + membersOnWebOnly);">
           <li tal:attributes="id string:${groupStats/group/id}-current-membership;">
-            <tal:block i18n:translate="">Current Members:</tal:block>
+            <tal:block
+              i18n:translate="current-members">Current Members:</tal:block>
             <span tal:content="groupMembersInfo/fullMemberCount"
                   class="val">A Number</span>
           </li>
           <li tal:attributes="id string:${groupStats/group/id}-current-membership;">
-            <tal:block i18n:translate="">Email Members:</tal:block>
+            <tal:block
+              i18n:translate="email-members">Email Members:</tal:block>
             <span tal:content="membersOnEmail"
                   class="val">A Number</span>
           </li>
           <li tal:attributes="id string:${groupStats/group/id}-current-membership;">
-            <tal:block i18n:translate="">Digest Members:</tal:block>
+            <tal:block
+              i18n:translate="digest-members">Digest Members:</tal:block>
             <span tal:content="membersOnDigest"
                   class="val">A Number</span>
           </li>
           <li tal:attributes="id string:${groupStats/group/id}-current-membership;">
-            <tal:block i18n:translate="">Web Only Members:</tal:block>
+            <tal:block
+              i18n:translate="web-only-members">Web Only Members:</tal:block>
             <span tal:content="membersOnWebOnly"
                   class="val">A Number</span>
           </li>
         </ul>
         <table>
-          <caption tal:content="string:Posts per month in ${groupStats/group/name}"
-                   i18n:translate="">
-            Posts per month
+          <caption i18n:translate="posts-per-month">
+            Posts per month in
+            <span class="group" tal:content="groupStats/group/name"
+                  i18n:name="groupName">this group</span>
           </caption>
           <thead>
             <tr>
               <th></th>
-              <th colspan="12" i18n:translate="">Month</th>
+              <th colspan="12" i18n:translate="month">Month</th>
             </tr>
             <tr>
-              <th i18n:translate="">Year</th>
+              <th i18n:translate="year">Year</th>
               <tal:block tal:repeat="m python:range(1, 13)">
                 <th tal:content="m"/>
               </tal:block>
@@ -89,7 +95,7 @@
           </thead>
           <tfoot>
             <tr>
-              <th i18n:translate="">Year</th>
+              <th i18n:translate="year">Year</th>
               <tal:block tal:repeat="m python:range(1, 13)">
                 <th tal:content="m"/>
               </tal:block>

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-10-29 19:06+0000\n"
+"POT-Creation-Date: 2015-02-19 17:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,74 +14,82 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ./browser/templates/view.pt:53
-msgid "Current Members:"
-msgstr ""
-
-#: ./browser/templates/view.pt:63
-msgid "Digest Members:"
-msgstr ""
-
-#: ./browser/templates/view.pt:58
-msgid "Email Members:"
-msgstr ""
-
-#: ./browser/templates/view.pt:81
-msgid "Month"
-msgstr ""
-
-#: ./interfaces.py:29
-msgid "Page Template File Name"
-msgstr ""
-
-#: ./browser/templates/view.pt:22
-msgid "Participation statistics"
-msgstr ""
-
-#: ./browser/templates/view.pt:10
-msgid "Participation statistics: ${siteName}"
-msgstr ""
-
-#: ./interfaces.py:24
-msgid "Site Identifier"
-msgstr ""
-
-#: ./interfaces.py:25
-msgid "The identifier for the site"
-msgstr ""
-
-#: ./interfaces.py:30
-msgid "The name of the ZPT file that is used to render the status message."
-msgstr ""
-
-#: ./browser/templates/link.pt:4
-msgid "View the <strong>statistics</strong>."
-msgstr ""
-
-#: ./browser/templates/view.pt:68
-msgid "Web Only Members:"
-msgstr ""
-
-#: ./browser/templates/view.pt:84
-msgid "Year"
-msgstr ""
-
-#: ./browser/templates/view.pt:28
+#: ./browser/templates/view.pt:29
 msgid "csv"
 msgstr ""
 
+#. Default: "Current Members:"
+#: ./browser/templates/view.pt:54
+msgid "current-members"
+msgstr ""
+
+#. Default: "Digest Members:"
+#: ./browser/templates/view.pt:66
+msgid "digest-members"
+msgstr ""
+
+#. Default: "Email Members:"
+#: ./browser/templates/view.pt:60
+msgid "email-members"
+msgstr ""
+
+#. Default: "Month"
+#: ./browser/templates/view.pt:87
+msgid "month"
+msgstr ""
+
 #. Default: "There are no posts in ${groupName}"
-#: ./browser/templates/view.pt:122
+#: ./browser/templates/view.pt:128
 msgid "no-posts"
 msgstr ""
 
-#. Default: "${siteName} has ${val} ${members} ${singular}"
-#: ./browser/templates/contentprovider.pt:14
-msgid "summary-stats-members"
+#. Default: "Participation statistics"
+#: ./browser/templates/view.pt:22
+msgid "page-name"
 msgstr ""
 
-#. Default: "Normally they post around ${meanPosts} posts each day; the most they have posted is ${maxPosts} posts in one day."
-#: ./browser/templates/contentprovider.pt:24
-msgid "summary-stats-posting"
+#. Default: "Participation statistics: ${siteName}"
+#: ./browser/templates/view.pt:10
+msgid "page-title"
+msgstr ""
+
+#. Default: "Posts per month in ${groupName}"
+#: ./browser/templates/view.pt:81
+msgid "posts-per-month"
+msgstr ""
+
+#. Default: "View the <strong>statistics</strong>."
+#: ./browser/templates/link.pt:4
+msgid "site-stats-link"
+msgstr ""
+
+#. Default: "${siteName} has <strong>no members.</strong>"
+#: ./browser/templates/contentprovider.pt:8
+msgid "site-stats-summary-members-0"
+msgstr ""
+
+#. Default: "${siteName} has one member."
+#: ./browser/templates/contentprovider.pt:14
+msgid "site-stats-summary-members-1"
+msgstr ""
+
+#. Default: "${siteName} has ${memberCount} members."
+#: ./browser/templates/contentprovider.pt:23
+msgid "site-stats-summary-members-many"
+msgstr ""
+
+#. Default: "Normally they post around ${mean-posts-per-day} posts each day; the most they have posted is ${maximum-posts-per-day} posts in one day."
+#: ./browser/templates/contentprovider.pt:34
+msgid "site-stats-summary-posting"
+msgstr ""
+
+#. Default: "Web Only Members:"
+#: ./browser/templates/view.pt:72
+msgid "web-only-members"
+msgstr ""
+
+#. Default: "Year"
+#: ./browser/templates/view.pt:90
+msgid "year"
 msgstr ""
 
