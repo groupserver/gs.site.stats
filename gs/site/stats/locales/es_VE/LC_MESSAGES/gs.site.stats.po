@@ -1,21 +1,18 @@
-#
-# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: gs.site.stats\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2015-02-22 22:37+0000\n"
-"PO-Revision-Date: 2015-02-19 18:36+0000\n"
-"Last-Translator: Michael JasonSmith <mpj17@onlinegroups.net>\n"
-"Language-Team: German (http://www.transifex.com/projects/p/gs-site-stats/language/de/)\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
-"Language: de\n"
 
 #: ./browser/templates/view.pt:29
 msgid "csv"
@@ -81,7 +78,6 @@ msgstr ""
 msgid "site-stats-summary-members-many"
 msgstr ""
 
-#. the most they have posted is ${maximum-posts-per-day} posts in one day."
 #. Default: "Normally they post around ${mean-posts-per-day} posts each day; the most they have posted is ${maximum-posts-per-day} posts in one day."
 #: ./browser/templates/contentprovider.pt:34
 msgid "site-stats-summary-posting"
