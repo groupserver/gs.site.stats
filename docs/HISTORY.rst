@@ -1,11 +1,21 @@
 Changelog
 =========
 
+2.1.2 (2015-03-12)
+------------------
+
+* [FR] Adding a French translation, thanks to `Razique Mahroua`_
+
+.. _Razique Mahroua:
+   https://www.transifex.com/accounts/profile/Razique/
+
+
 2.1.1 (2015-02-19)
 ------------------
 
-* Added Transifex_ support for the i18n
-* Refactored the site-statistics summary to better handle plurals
+* Adding Transifex_ support for the i18n
+* Refactoring the site-statistics summary to better handle
+  plurals
 
 .. _Transifex: https://www.transifex.com/projects/p/gs-site-stats/
 
