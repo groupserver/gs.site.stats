@@ -23,8 +23,10 @@ Resources
 =========
 
 - Code repository: https://github.com/groupserver/gs.site.stats/
-- Translations: https://www.transifex.com/projects/p/gs-site-stats/
-- Questions and comments to http://groupserver.org/groups/development/
+- Translations:
+  https://www.transifex.com/projects/p/gs-site-stats/
+- Questions and comments to
+  http://groupserver.org/groups/development/
 - Report bugs at https://redmine.iopen.net/projects/groupserver/
 
 .. _GroupServer.org: http://groupserver.org/
