@@ -71,7 +71,6 @@ setup(
         'gs.group.member.base',
         'gs.group.stats',
         'gs.viewlet',
-        'Products.GSGroupMember',
     ],
     entry_points="""
     # -*- Entry points: -*-

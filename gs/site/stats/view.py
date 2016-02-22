@@ -16,8 +16,8 @@ from __future__ import unicode_literals, absolute_import, print_function
 from zope.cachedescriptors.property import Lazy
 from zope.component import createObject
 from gs.content.base.page import SitePage
+from gs.group.member.base import FullMembers
 from gs.group.stats import MembersAtDate, MessageQuery
-from Products.GSGroupMember.groupMembersInfo import GSGroupMembersInfo
 
 
 class GSSiteStatsView(SitePage):
@@ -45,20 +45,14 @@ class GSSiteStatsView(SitePage):
             retval = {'group': gObj, 'stats': res}
             yield retval
 
-    def get_group_members_info(self, group):
-        """
-            Convienence method for templates. Returns an instance of
-            IGSGroupMembersInfo for the provided group.
-        """
-        groupMembersInfo = GSGroupMembersInfo(group)
-        assert groupMembersInfo
-        return groupMembersInfo
+    def get_members(self, group):
+        """Convienence method for templates. Returns the full members provided group."""
+        retval = FullMembers(group)
+        return retval
 
     def get_members_at_date(self, group):
-        """
-            Convienence method for templates. Returns an instance of
-            gs.group.stats.queries.MembersAtDate.
-        """
+        """Convienence method for templates. Returns an instance of
+gs.group.stats.queries.MembersAtDate."""
         mad = MembersAtDate(group)
         assert mad
         return mad

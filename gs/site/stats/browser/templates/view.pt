@@ -45,15 +45,15 @@
             tal:define="g groupStats/group/groupObj;
                         siteId view/siteInfo/id;
                         groupId groupStats/group/id;
-                        groupMembersInfo python: view.get_group_members_info(g);
+                        groupMembers python: view.get_members(g);
                         membersAtDate python: view.get_members_at_date(g);
                         membersOnDigest python: membersAtDate.members_on_digest(siteId, groupId);
                         membersOnWebOnly python: membersAtDate.members_on_webonly(siteId, groupId);
-                        membersOnEmail python: groupMembersInfo.fullMemberCount - (membersOnDigest + membersOnWebOnly);">
+                        membersOnEmail python: len(groupMembers) - (membersOnDigest + membersOnWebOnly);">
           <li tal:attributes="id string:${groupStats/group/id}-current-membership;">
             <tal:block
               i18n:translate="current-members">Current Members:</tal:block>
-            <span tal:content="groupMembersInfo/fullMemberCount"
+            <span tal:content="python:len(groupMembers)"
                   class="val">A Number</span>
           </li>
           <li tal:attributes="id string:${groupStats/group/id}-current-membership;">
