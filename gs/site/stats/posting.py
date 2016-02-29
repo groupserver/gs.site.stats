@@ -12,7 +12,8 @@
 # FOR A PARTICULAR PURPOSE.
 #
 ############################################################################
-from __future__ import unicode_literals
+from __future__ import absolute_import, division, print_function, unicode_literals
+from operator import itemgetter
 from zope.cachedescriptors.property import Lazy
 from gs.group.member.base import get_group_userids
 from gs.group.stats import MessageQuery
@@ -25,13 +26,13 @@ class SitePostingStats(object):
 
     def update(self):
         # Update the postStats
-        foo = self.postStats  # lint:ok
+        _ = self.postStats  # lint:ok
         return None
 
     @Lazy
     def postStats(self):
         retval = self.query.posts_per_day_on_site(self.siteInfo.id)
-        retval.sort(key=lambda x: x['date'])
+        retval.sort(key=itemgetter('date'))
         return retval
 
     @Lazy
@@ -41,9 +42,7 @@ class SitePostingStats(object):
 
     @Lazy
     def postsExist(self):
-        retval = False
-        if self.postStats:
-            retval = len(self.postStats) > 0
+        retval = len(self.postStats) > 0
         assert type(retval) == bool
         return retval
 
@@ -65,7 +64,7 @@ class SitePostingStats(object):
     def meanPerDay(self):
         deltaT = self.postStats[-1]['date'] - self.postStats[0]['date']
         if deltaT.days > 0:
-            nPosts = float(sum([s['n_posts'] for s in self.postStats]))
+            nPosts = sum([s['n_posts'] for s in self.postStats])
             mean = nPosts / deltaT.days
         else:
             mean = 0.0
