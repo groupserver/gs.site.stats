@@ -74,6 +74,8 @@ setup(
         'gs.group.stats',
         'gs.viewlet',
     ],
+    test_suite="{0}.tests.test_all".format(name),
+    tests_require=['mock', ],
     entry_points="""
     # -*- Entry points: -*-
     """,)
