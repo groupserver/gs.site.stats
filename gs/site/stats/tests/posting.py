@@ -126,3 +126,23 @@ class TestSitePostingStats(TestCase):
         r = s.meanPerDay
 
         self.assertEqual(0.0, r)
+
+    @patch.object(SitePostingStats, 'meanPerDay', new_callable=PropertyMock)
+    def test_int_mean_posts_up(self, m_mPD):
+        'Test that the intMeanPerDay property rounds up'
+        m_mPD.return_value = 1.5
+
+        s = SitePostingStats(MagicMock(), MagicMock())
+        r = s.intMeanPerDay
+
+        self.assertEqual(2, r)
+
+    @patch.object(SitePostingStats, 'meanPerDay', new_callable=PropertyMock)
+    def test_int_mean_posts_down(self, m_mPD):
+        'Test that the intMeanPerDay property rounds down'
+        m_mPD.return_value = 1.4
+
+        s = SitePostingStats(MagicMock(), MagicMock())
+        r = s.intMeanPerDay
+
+        self.assertEqual(1, r)

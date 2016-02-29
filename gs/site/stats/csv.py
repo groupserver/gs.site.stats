@@ -80,12 +80,10 @@ class GSSiteStatsCSVView(GSSiteStatsView):
                 r += '\n'
 
         response = self.request.response
-        ctype = 'text/csv; charset=UTF-8'
-        response.setHeader(to_ascii("Content-Type"), to_ascii(ctype))
+        response.setHeader(b"Content-Type", b'text/csv; charset=UTF-8')
         filename = '{0}-statistics.csv'.format(self.siteInfo.id)
         disposition = 'inline; filename="{0}"'.format(filename)
-        response.setHeader(to_ascii('Content-Disposition'),
-                           to_ascii(disposition))
+        response.setHeader(b'Content-Disposition', to_ascii(disposition))
         assert r
         retval = r.encode('utf-8', 'ignore')
         assert retval
