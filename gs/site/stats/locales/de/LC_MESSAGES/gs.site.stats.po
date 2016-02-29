@@ -1,21 +1,22 @@
-#
+# 
 # Translators:
+# Alice Rose <heldinz@posteo.de>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: gs.site.stats\n"
-"POT-Creation-Date: 2015-02-22 22:37+0000\n"
-"PO-Revision-Date: 2015-02-19 18:36+0000\n"
-"Last-Translator: Michael JasonSmith <mpj17@onlinegroups.net>\n"
-"Language-Team: German (http://www.transifex.com/projects/p/gs-site-stats/language/de/)\n"
+"POT-Creation-Date: 2016-02-29 19:14+0000\n"
+"PO-Revision-Date: 2016-02-29 19:18+0000\n"
+"Last-Translator: Michael JasonSmith <mpj17@ldots.org>\n"
+"Language-Team: German (http://www.transifex.com/groupserver/gs-site-stats/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language-Code: en\n"
-"Language-Name: English\n"
-"Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 "Language: de\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Preferred-Encodings: utf-8 latin1\n"
 
 #: ./browser/templates/view.pt:29
 msgid "csv"
@@ -24,7 +25,7 @@ msgstr ""
 #. Default: "Current Members:"
 #: ./browser/templates/view.pt:54
 msgid "current-members"
-msgstr ""
+msgstr "Aktuelle Mitglieder:"
 
 #. Default: "Digest Members:"
 #: ./browser/templates/view.pt:66
@@ -39,12 +40,12 @@ msgstr ""
 #. Default: "Month"
 #: ./browser/templates/view.pt:87
 msgid "month"
-msgstr ""
+msgstr "Monat"
 
 #. Default: "There are no posts in ${groupName}"
 #: ./browser/templates/view.pt:128
 msgid "no-posts"
-msgstr ""
+msgstr "Es gibt keine Beiträge in ${groupName}."
 
 #. Default: "Participation statistics"
 #: ./browser/templates/view.pt:22
@@ -59,9 +60,9 @@ msgstr ""
 #. Default: "Posts per month in ${groupName}"
 #: ./browser/templates/view.pt:81
 msgid "posts-per-month"
-msgstr ""
+msgstr "Beiträge pro Monat in ${groupName}"
 
-#. Default: "View the <strong>statistics</strong>."
+#. Default: "View the <b>statistics.</b>"
 #: ./browser/templates/link.pt:4
 msgid "site-stats-link"
 msgstr ""
@@ -69,20 +70,20 @@ msgstr ""
 #. Default: "${siteName} has <strong>no members.</strong>"
 #: ./browser/templates/contentprovider.pt:8
 msgid "site-stats-summary-members-0"
-msgstr ""
+msgstr "${siteName} hat <strong>keine Mitglieder.</strong>"
 
 #. Default: "${siteName} has one member."
 #: ./browser/templates/contentprovider.pt:14
 msgid "site-stats-summary-members-1"
-msgstr ""
+msgstr "${siteName} hat ein Mitglied."
 
 #. Default: "${siteName} has ${memberCount} members."
 #: ./browser/templates/contentprovider.pt:23
 msgid "site-stats-summary-members-many"
-msgstr ""
+msgstr "${siteName} hat ${memberCount} Mitglieder."
 
+#. Default: "Normally they post around ${mean-posts-per-day} posts each day;
 #. the most they have posted is ${maximum-posts-per-day} posts in one day."
-#. Default: "Normally they post around ${mean-posts-per-day} posts each day; the most they have posted is ${maximum-posts-per-day} posts in one day."
 #: ./browser/templates/contentprovider.pt:34
 msgid "site-stats-summary-posting"
 msgstr ""
@@ -95,5 +96,4 @@ msgstr ""
 #. Default: "Year"
 #: ./browser/templates/view.pt:90
 msgid "year"
-msgstr ""
-
+msgstr "Jahr"

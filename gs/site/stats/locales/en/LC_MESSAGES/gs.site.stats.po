@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-02-22 22:37+0000\n"
+"POT-Creation-Date: 2016-02-29 19:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,10 +58,10 @@ msgstr "Participation statistics: ${siteName}"
 msgid "posts-per-month"
 msgstr "Posts per month in ${groupName}"
 
-#. Default: "View the <strong>statistics</strong>."
+#. Default: "View the <b>statistics.</b>"
 #: ./browser/templates/link.pt:4
 msgid "site-stats-link"
-msgstr "View the <strong>statistics</strong>."
+msgstr "View the <b>statistics.</b>"
 
 #. Default: "${siteName} has <strong>no members.</strong>"
 #: ./browser/templates/contentprovider.pt:8

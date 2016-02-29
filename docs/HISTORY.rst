@@ -1,6 +1,16 @@
 Changelog
 =========
 
+2.1.3 (2016-02-29)
+------------------
+
+* [DE] Adding a German translation, thanks to Alice Rose
+* Following the changes to `gs.group.member.base`_
+* Adding unit tests
+
+.. _gs.group.member.base:
+   https://github.com/groupserver/gs.group.member.base
+
 2.1.2 (2015-03-12)
 ------------------
 

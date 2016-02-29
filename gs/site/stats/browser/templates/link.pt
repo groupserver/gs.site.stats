@@ -2,5 +2,5 @@
     i18n:domain="gs.site.stats"
     id="gs-site-stats-link">
   <a i18n:translate="site-stats-link"
-     href="/stats.html">View the <strong>statistics</strong>.</a>
+     href="/stats.html">View the <b>statistics.</b></a>
 </li>

@@ -1,12 +1,13 @@
 # 
 # Translators:
 # Michael JasonSmith <mpj17@ldots.org>, 2015
+# Michael JasonSmith <mpj17@ldots.org>, 2015
 # Razique Mahroua <razique.mahroua@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: gs.site.stats\n"
-"POT-Creation-Date: 2015-02-22 22:37+0000\n"
-"PO-Revision-Date: 2016-02-26 23:29+0000\n"
+"POT-Creation-Date: 2016-02-29 19:14+0000\n"
+"PO-Revision-Date: 2016-02-29 19:18+0000\n"
 "Last-Translator: Michael JasonSmith <mpj17@ldots.org>\n"
 "Language-Team: French (http://www.transifex.com/groupserver/gs-site-stats/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -63,10 +64,10 @@ msgstr "Statistiques de participation pour le site : ${siteName}"
 msgid "posts-per-month"
 msgstr "Messages par mois dans le groupe ${groupName}"
 
-#. Default: "View the <strong>statistics</strong>."
+#. Default: "View the <b>statistics.</b>"
 #: ./browser/templates/link.pt:4
 msgid "site-stats-link"
-msgstr "Afficher les <strong>statistiques</strong>."
+msgstr "Afficher les <b>statistiques.</b>"
 
 #. Default: "${siteName} has <strong>no members.</strong>"
 #: ./browser/templates/contentprovider.pt:8
