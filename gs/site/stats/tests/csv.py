@@ -15,6 +15,7 @@
 from __future__ import absolute_import, unicode_literals, print_function
 from mock import (MagicMock, patch, PropertyMock, call, )
 from unittest import TestCase
+from gs.group.stats.messagequery import YearDict
 from gs.site.stats.csv import (GSSiteStatsCSVView, )
 
 
@@ -80,3 +81,19 @@ class TestGSSiteStatsCSVView(TestCase):
         self.assertIn('"Email members",  , , ,3', r)
         self.assertIn('"Web-only members",  , , ,2', r)
         self.assertIn('"Digest members",  , , ,1', r)
+        self.assertEqual(4, r.count('\n'))
+
+    def test_group_monthly_posting_stats(self):
+        y2016 = YearDict()
+        y2016[1] = {'post_count': 9, 'user_count': 3}
+        y2016[2] = {'post_count': 25, 'user_count': 4}
+        y2016[3] = {'post_count': 29, 'user_count': 6}
+        y2016[4] = {'post_count': 22, 'user_count': 8}
+        stats = {2016: y2016}
+
+        s = GSSiteStatsCSVView(MagicMock(), MagicMock())
+        r = s.group_monthly_posting_stats(self.group, stats)
+
+        self.assertIn('"Posts", 9, 25, 29, 22, 0, 0, 0, 0, 0, 0, 0, 0\n', r)
+        self.assertIn('"Authors", 3, 4, 6, 8, 0, 0, 0, 0, 0, 0, 0, 0\n', r)
+        self.assertEqual(2, r.count('"ethel", "Ethel the frog", 2016, '))
