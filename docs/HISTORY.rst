@@ -1,6 +1,14 @@
 Changelog
 =========
 
+2.1.4 (2016-04-19)
+------------------
+
+* Adding more unit tests
+* Following the changes to `gs.group.stats`_
+
+.. _gs.group.stats: https://github.com/groupserver/gs.group.stats
+
 2.1.3 (2016-02-29)
 ------------------
 
